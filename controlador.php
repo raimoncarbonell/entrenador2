@@ -18,7 +18,7 @@ $c["view"]=new \Slim\Views\PhpRenderer("vista/");
 
 $app->get("/crearpreguntas", function($request,$response,$args)
           {
-            return $response->withRedirect('/vista/nuevaPregunta.php');
+          $this->view->render($response, "nuevaPregunta.php", []);  
           });
 
 
