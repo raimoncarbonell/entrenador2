@@ -101,7 +101,7 @@
 
                                     // creamos tabla cinemania
 
-                                       $sql="CREATE TABLE `Respuestas` ( `id` int(11) primary key auto_increment NOT NULL,
+                                       $sql="CREATE TABLE `respuestas` ( `id` int(11) primary key auto_increment NOT NULL,
                             `respuestas` text NOT NULL,
                              `verdadera` int DEFAULT NULL,
                              `pregunta` int DEFAULT NULL,
