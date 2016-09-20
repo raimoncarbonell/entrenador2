@@ -16,7 +16,7 @@
 <div id="contenedor">
   <nav id="menu">
               <ul>
-                  <a href='controlador.php/crearpreguntas'>Crear pregutas</a>;
+                  <a href='controlador.php/crearpregunta'>Crear pregutas</a>;
                   <li><a href="#">bbb bbbb</a></li>
                   <li><a href="#">cc c c cc</a></li>
                   <li><a href="#">dddddd</a></li>

@@ -43,9 +43,6 @@
               }
 
 
-
-
-
                         // nos conectamos a la base de datos que hemos creado
 
                         $sql="use bd;";
@@ -83,7 +80,7 @@
                                    //insertamos en categorias
 
                                      $sql="CREATE TABLE `preguntas` ( `id` int(11) primary key auto_increment NOT NULL,
-                            `preguntas` text NOT NULL,
+                            `pregunta` text NOT NULL,
                              `tema` int DEFAULT NULL,
                              foreign key (tema) references temas(id));";
 
@@ -102,7 +99,7 @@
                                     // creamos tabla cinemania
 
                                        $sql="CREATE TABLE `respuestas` ( `id` int(11) primary key auto_increment NOT NULL,
-                            `respuestas` text NOT NULL,
+                            `respuesta` text NOT NULL,
                              `verdadera` int DEFAULT NULL,
                              `pregunta` int DEFAULT NULL,
                              foreign key (pregunta) references preguntas(id));";
