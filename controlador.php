@@ -13,6 +13,17 @@ $c["bd"]=function()
 };
 
 $c["view"]=new \Slim\Views\PhpRenderer("vista/");
+$app->add(new \Slim\Middleware\SafeURLMiddleware());
+
+$app->add(new \Slim\Middleware\HttpBasicAuthentication([
+  "users" => [
+    "admin" => "admin",
+    "rodolfo" => "contraseñaderodolfo"
+
+  ],
+    "path" => "/crearpregunta"
+]));
+
 
 $app->get("/crearpregunta", function($request,$response,$args)
           {
@@ -155,7 +166,7 @@ $app->post("/ncrearpregunta", function($request,$response,$args)
                                                     }
 
             $this->view->render($response,"nuevaPregunta.php",$params);
-            });
+          });
 
 
 $app->post("/comprobarRespuestas", function($request,$response,$args)

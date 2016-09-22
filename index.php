@@ -10,6 +10,7 @@
 
 <body>
   <H1>Entrenador</H1>
+
 <div id="contenedor">
   <nav id="menu">
               <ul>

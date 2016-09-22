@@ -1,6 +1,8 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "slim/php-view": "^2.1"
+        "slim/php-view": "^2.1",
+        "tuupola/slim-basic-auth": "^2.1",
+        "osorcom/safe-url-middleware": "^1.0"
     }
 }
