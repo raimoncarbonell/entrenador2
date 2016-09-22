@@ -17,11 +17,11 @@
               <ul>
 
                   <li><a href="../index.php">Incio</a></li>
-                  <li><a href="#">cc c c cc</a></li>
+                  <li><a href="../controlador.php/preguntaAleatoria">pregunta Aleatoria</a></li>
                   <li><a href="#">dddddd</a></li>
               </ul>
           </nav>
-
+<main>
           <?php if(isset($data['pregunta']))
           {
             ?>
@@ -40,7 +40,7 @@
 <label>Repuesta3</label><br><input type='text' name='respuesta3'><input type="radio" name="R" value="r3"><br><br>
 <label>Tema</label><br><input type='text' name='tema'><br><br>
 <input type='submit' value='Crear nueva pregunta'></form>
-
+</main>
 </div>
 
 </body>

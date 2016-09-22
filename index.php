@@ -8,20 +8,18 @@
         <link rel="stylesheet" type="text/css" href="css/estilos.css">
     </head>
 
-    <style>
-
-    </style>
 <body>
   <H1>Entrenador</H1>
 <div id="contenedor">
   <nav id="menu">
               <ul>
-                  <a href='controlador.php/crearpregunta'>Crear pregutas</a>;
-                  <li><a href="#">bbb bbbb</a></li>
+                  <a href='controlador.php/crearpregunta'>Crear preguntas</a>;
+                    <a href='controlador.php/preguntaAleatoria'>Preguta Aletoria</a>;
                   <li><a href="#">cc c c cc</a></li>
                   <li><a href="#">dddddd</a></li>
               </ul>
           </nav>
+
 </div>
 
 </body>

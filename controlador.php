@@ -19,6 +19,36 @@ $app->get("/crearpregunta", function($request,$response,$args)
           $this->view->render($response, "nuevaPregunta.php", []);
           });
 
+
+$app->get("/preguntaAleatoria", function($request,$response,$args)
+        {
+          $con=$this->bd;
+          $sql="SELECT id FROM preguntas order by rand () limit 1";
+          $res=$con->query($sql);
+          foreach($res as $fila)
+          {
+            $idPregunta=$fila['id'];
+          }
+
+          $sql="SELECT preguntas.pregunta ,temas.titulo FROM preguntas ,temas WHERE preguntas.tema=temas.id and preguntas.id=$idPregunta";
+
+
+          $res=$con->query($sql);
+          $datosPregunta=$res->fetchAll();
+
+          $sql="SELECT respuesta ,id from respuestas WHERE pregunta=$idPregunta";
+
+          $res=$con->query($sql);
+          $datosRespuestas=$res->fetchAll();
+
+          $datos['pregunta']=$datosPregunta;
+          $datos ['respuestas']=$datosRespuestas;
+          $datos['idPregunta']=$idPregunta;
+
+        $this->view->render($response, "preguntaAleatoria.php",$datos);
+        });
+
+
 $app->post("/ncrearpregunta", function($request,$response,$args)
             {
               $con=$this->bd;
@@ -126,6 +156,50 @@ $app->post("/ncrearpregunta", function($request,$response,$args)
 
             $this->view->render($response,"nuevaPregunta.php",$params);
             });
+
+
+$app->post("/comprobarRespuestas", function($request,$response,$args)
+      {
+        $con=$this->bd;
+        $params=$request->getParsedBody();
+
+
+
+          $idPregunta=$con->quote($params['idPregunta']);
+          $idRespuesta=$con->quote($params['idRespuesta']);
+
+          $sql="SELECT pregunta FROM preguntas WHERE id =$idPregunta;";
+          $res=$con->query($sql);
+
+          foreach($res as $fila)
+          {
+              $datos['pregunta']=$fila['pregunta'];
+          }
+
+          $sql="SELECT respuesta,verdadera FROM respuestas WHERE id=$idRespuesta and pregunta=$idPregunta";
+          $res=$con->query($sql);
+
+          $llRespuestas=$res->fetchAll();
+          foreach ($llRespuestas as  $respuesta) {
+
+            if ($respuesta['verdadera']==1)
+             {
+              echo "correcto";
+            }
+            else {
+              echo "error";
+            }
+          }
+
+
+
+
+
+
+
+
+
+      });
 
 
 $app->run();
