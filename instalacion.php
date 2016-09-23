@@ -132,6 +132,9 @@
                                       $sql="INSERT INTO `estadistica` (`id`, `ruta`, `clics`) VALUES (NULL, 'comprobarRespuestas', '0');";
                                         $res=$conexion->exec($sql);
 
+                                        $sql="INSERT INTO `estadistica` (`id`, `ruta`, `clics`) VALUES (NULL, 'ncrearpregunta', '0');";
+                                          $res=$conexion->exec($sql);
+
                                           // insertamos tema de ejemplo
 
                                           $sql="INSERT INTO `temas` (`id`, `titulo`, `titulo_url`) VALUES (NULL, 'mates', 'mates')";

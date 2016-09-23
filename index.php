@@ -9,6 +9,7 @@
     </head>
 
 <body>
+  
   <H1>Entrenador</H1>
 
 <div id="contenedor">

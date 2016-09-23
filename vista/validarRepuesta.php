@@ -10,7 +10,7 @@
 
     </style>
 <body>
-  <H1>Entrenador añadir pregunta</H1>
+  <H1>Entrenador validar respuesta</H1>
 <div id="contenedor">
 
   <nav id="menu">
@@ -23,37 +23,37 @@
           </nav>
 <main>
   <?php
-print_r($data);
-
 ?>
-<p><strong><?php  echo $data['pregunta'];?></strong><p>
+<p><strong><?php  echo "¿".$data['pregunta']."?";?></strong><p>
 <br>
  <?php
    if ($data['estado']=='error')
    {
-     echo "<div id ='cajaInfoError'> Has fallado la respuesta</div>";
+     echo "<div id ='cajaInfoError'> Has fallado la respuesta. La pregunta correcta esta destacada en negrita</div>";
 
      $respuestaUsuario=$data['respuesta'];
+     echo "<ul>";
 
      foreach ($data['llistaRespuestas'] as $res )
      {
+
         if($res['verdadera']==1)
         {
-          echo "<p><strong>".$res['respuesta']."</strong></p>";
+          echo "<li><strong>".$res['respuesta']."</strong></li>";
         }
         else {
-        echo "<p>".$res['respuesta']."</p>";
+        echo "<li>".$res['respuesta']."</li>";
         }
-
       }
     }
       else {
         echo "respuesta correcta";
       }
 ?>
+<br>
+<a href="../controlador.php/preguntaAleatoria">Siguiente Pregunta Aleatoria</a>
 </main>
 </div>
-
 </body>
 <footer> Web creada por Raimon Carbonell <footer>
 </html>

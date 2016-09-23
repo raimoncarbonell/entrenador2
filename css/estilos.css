@@ -1,4 +1,37 @@
-﻿  #menu ul{
+body
+           {
+               margin:0;
+               background-size:cover;
+               background-attachment: fixed;
+           }
+
+  header
+           {
+               background-color: brown;
+               background-image: url(../vista/imatges/degradado.jpg);
+               background-size: cover;
+               color: white;
+               height: 120px;
+               margin: 0;
+               width: 100%;
+               position: fixed;
+           }
+
+           header h1
+           {
+               color:black;
+               text-align: center;
+               margin: 0;
+               font-size: 80px;
+           }
+
+#contenedor
+           {
+               padding-top: 120px;
+           }
+
+
+#menu ul{
                 list-style-type: none;
                 background-color: black;
             }

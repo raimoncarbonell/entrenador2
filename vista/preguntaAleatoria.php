@@ -12,10 +12,8 @@
 
   <nav id="menu">
               <ul>
-
                   <li><a href="../index.php">Incio</a></li>
                 <li><a href='../controlador.php/crearpregunta'>Crear preguntas</a></li>
-
               </ul>
           </nav>
           <main>
@@ -28,7 +26,7 @@
               $datosPregunta=$data['pregunta'];
 
               $pregunta=$datosPregunta[0];
-              echo "<p>la pregunta aletoria del tema  </strong>".$pregunta['titulo']."</strong></p> ";
+              echo "<p>la pregunta aletoria del tema :</strong>".$pregunta['titulo']."</strong></p> ";
 
               ?>
                             <input type="text" style='visibility:hidden'  name="idPregunta" value="<?php echo $data['idPregunta']; ?>" >
@@ -38,9 +36,9 @@
                 foreach ($data['respuestas'] as $value) {
 
 
-                     echo "<input type='radio' name='idRespuesta' value=".$value['id']."><label>".$value['respuesta']."</label>";
+                     echo "<input type='radio' name='idRespuesta' value=".$value['id']." required ><label>".$value['respuesta']."</label>";
                     echo "<br>";
-                    //echo $value['id'];
+
                 }
                 echo "<br>";
                 echo "<br>";
