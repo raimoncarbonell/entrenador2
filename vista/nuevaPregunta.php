@@ -18,7 +18,7 @@
 
                   <li><a href="../index.php">Incio</a></li>
                   <li><a href="../controlador.php/preguntaAleatoria">pregunta Aleatoria</a></li>
-                  <li><a href="#">dddddd</a></li>
+                  
               </ul>
           </nav>
 <main>

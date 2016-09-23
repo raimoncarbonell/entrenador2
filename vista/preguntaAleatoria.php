@@ -14,8 +14,8 @@
               <ul>
 
                   <li><a href="../index.php">Incio</a></li>
-                  li><a href="../controlador.php/preguntaAleatoria">Pregunta Aleatoria</a></li>
-                  <li><a href="#">dddddd</a></li>
+                <li><a href='../controlador.php/crearpregunta'>Crear preguntas</a></li>
+
               </ul>
           </nav>
           <main>

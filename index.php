@@ -14,10 +14,9 @@
 <div id="contenedor">
   <nav id="menu">
               <ul>
-                  <a href='controlador.php/crearpregunta'>Crear preguntas</a>;
-                    <a href='controlador.php/preguntaAleatoria'>Preguta Aletoria</a>;
-                  <li><a href="#">cc c c cc</a></li>
-                  <li><a href="#">dddddd</a></li>
+                  <<li><a href='controlador.php/crearpregunta'>Crear preguntas</a></li>
+                  <li><a href='controlador.php/preguntaAleatoria'>Preguta Aletoria</a></li>
+
               </ul>
           </nav>
 

@@ -2,7 +2,7 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <title>crear bd Contactos</title>
+        <title>crear bd</title>
         <link href="estilos.css" rel="stylesheet">
 
     </head>
@@ -114,6 +114,43 @@
                                           {
                                               echo "<p>Tabla respuestas creada!!!</p>";
                                           }
+
+                                            // creacion de la tabla Estadistica
+                                          $sql="CREATE TABLE `estadistica` ( `id` int(11) primary key auto_increment NOT NULL,
+                                          `ruta` varchar(40) NOT NULL,
+                                        `clics` int DEFAULT NULL);";
+
+                                         $res=$conexion->exec($sql);
+                                          // insertamos la ruta de la web con el contador de vistas a 0
+
+                                         $sql="INSERT INTO `estadistica` (`id`, `ruta`, `clics`) VALUES (NULL, 'crearpregunta', '0')";
+                                         $res=$conexion->exec($sql);
+
+                                         $sql="INSERT INTO `estadistica` (`id`, `ruta`, `clics`) VALUES (NULL, 'preguntaAleatoria', '0')";
+                                          $res=$conexion->exec($sql);
+
+                                      $sql="INSERT INTO `estadistica` (`id`, `ruta`, `clics`) VALUES (NULL, 'comprobarRespuestas', '0');";
+                                        $res=$conexion->exec($sql);
+
+                                          // insertamos tema de ejemplo
+
+                                          $sql="INSERT INTO `temas` (`id`, `titulo`, `titulo_url`) VALUES (NULL, 'mates', 'mates')";
+                                          $res=$conexion->exec($sql);
+
+                                          // insertamos pregunta de ejemplo
+
+                                           $sql="INSERT INTO `preguntas` (`id`, `pregunta`, `tema`) VALUES (NULL, 'suma 2+2', '1')";
+                                            $res=$conexion->exec($sql);
+
+                                            // insertamos las respuestas
+                                             $sql="INSERT INTO `respuestas` (`id`, `respuesta`, `verdadera`, `pregunta`) VALUES (NULL, '4', '1', '1');";
+                                            $res=$conexion->exec($sql);
+
+                                             $sql="INSERT INTO `respuestas` (`id`, `respuesta`, `verdadera`, `pregunta`) VALUES (NULL, '5', '0', '1');";
+                                            $res=$conexion->exec($sql);
+
+                                            $sql="INSERT INTO `respuestas` (`id`, `respuesta`, `verdadera`, `pregunta`) VALUES (NULL, '6', '0', '1');";
+                                            $res=$conexion->exec($sql);
 
 
         ?>

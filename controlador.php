@@ -1,9 +1,11 @@
 <?php
 require "vendor/autoload.php";
+require "estadistica.php";
 
 
 $app=new Slim\App();
 $c=$app->getContainer();
+
 
 $c["bd"]=function()
 {
@@ -24,6 +26,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
     "path" => "/crearpregunta"
 ]));
 
+$app->add (new Estadistica());
 
 $app->get("/crearpregunta", function($request,$response,$args)
           {
@@ -97,7 +100,7 @@ $app->post("/ncrearpregunta", function($request,$response,$args)
                     {
                       $idTema=$fila['id'];
                     }
-                    // el tema ya existe si inserta la prengunta'.$idTema.');";
+                    // el tema ya existe si inserta la prengunta'.$idTema.';";
 
                     $pregunta=$con->quote($params['pregunta']);
                     $sql="  INSERT INTO `preguntas` (`id`, `pregunta`, `tema`) VALUES (NULL, $pregunta, '.$idTema.');";
@@ -190,24 +193,29 @@ $app->post("/comprobarRespuestas", function($request,$response,$args)
           $sql="SELECT respuesta,verdadera FROM respuestas WHERE id=$idRespuesta and pregunta=$idPregunta";
           $res=$con->query($sql);
 
-          $llRespuestas=$res->fetchAll();
-          foreach ($llRespuestas as  $respuesta) {
+          $respuestasEscogida=$res->fetchAll();
+
+          foreach ($respuestasEscogida as  $respuesta) {
 
             if ($respuesta['verdadera']==1)
              {
-              echo "correcto";
+              $datos['estado']="correcta";
+
             }
             else {
-              echo "error";
+              $datos['estado']="error";
             }
+              $datos['respuesta']=$respuesta['respuesta'];
+
+               $sql="SELECT * FROM respuestas where pregunta=$idPregunta";
+              $res=$con->query($sql);
+
+
+              $datos['llistaRespuestas']=$res->fetchAll();
+              //print_r($datos);
+
+              $this->view->render($response, "validarRepuesta.php",$datos);
           }
-
-
-
-
-
-
-
 
 
       });
