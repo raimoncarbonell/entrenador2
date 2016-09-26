@@ -1,11 +1,11 @@
 <html lang="es">
     <head>
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
         <title>Entrenador Estadistica</title>
     <link rel="stylesheet" type="text/css" href="../css/estilos.css">
     <script src="../Chart.js-2.3.0/jquery.min.js"></script>
-  <script src="../Chart.js-2.3.0/dist/Chart.bundle.js"></script>
+    <script src="../Chart.js-2.3.0/dist/Chart.bundle.js"></script>
     <style>
     canvas {
         -moz-user-select: none;
