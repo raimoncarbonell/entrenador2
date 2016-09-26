@@ -9,7 +9,7 @@
     </head>
 
 <body>
-  
+
   <H1>Entrenador</H1>
 
 <div id="contenedor">
@@ -17,6 +17,7 @@
               <ul>
                   <<li><a href='controlador.php/crearpregunta'>Crear preguntas</a></li>
                   <li><a href='controlador.php/preguntaAleatoria'>Preguta Aletoria</a></li>
+                  <li><a href='../entrenador2/vista/estaditicas.php'>Estadisticas</a></li>
 
               </ul>
           </nav>

@@ -13,7 +13,8 @@
   <nav id="menu">
               <ul>
                   <li><a href="../index.php">Incio</a></li>
-                <li><a href='../controlador.php/crearpregunta'>Crear preguntas</a></li>
+                <li><a href="../controlador.php/crearpregunta">Crear preguntas</a></li>
+                <li><a href="../vista/estaditicas.php">Estadisticas</a></li>
               </ul>
           </nav>
           <main>

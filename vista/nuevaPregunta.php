@@ -18,6 +18,7 @@
 
                   <li><a href="../index.php">Incio</a></li>
                   <li><a href="../controlador.php/preguntaAleatoria">pregunta Aleatoria</a></li>
+                  <li><a href='../vista/estaditicas.php'>Estadisticas</a></li>
 
               </ul>
           </nav>

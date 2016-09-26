@@ -107,7 +107,7 @@
                                       $res=$conexion->exec($sql);
                                       if($res===FALSE)
                                           {
-                                              echo "<p>No se ha podido crear la tabla cinemania</p>";
+                                              echo "<p>No se ha podido crear la tabla respuestas</p>";
                                               echo "<p>".$conexion->errorInfo()[2]."</p>";
                                           }
                                       else

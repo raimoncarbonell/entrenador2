@@ -1,6 +1,6 @@
 <?php
 require "vendor/autoload.php";
-require "estadistica.php";
+
 
 
 $app=new Slim\App();
@@ -26,7 +26,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication([
     "path" => "/crearpregunta"
 ]));
 
-$app->add (new Estadistica());
+
 
 $app->get("/crearpregunta", function($request,$response,$args)
           {
