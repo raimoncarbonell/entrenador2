@@ -156,6 +156,23 @@
                                             $res=$conexion->exec($sql);
 
 
+                                            // creacio de la tabla de usuario i contrasenya
+
+											                      $sql="CREATE TABLE users (user VARCHAR(32) NOT NULL,hash VARCHAR(255) NOT NULL)";
+											                      $res=$conexion->exec($sql);
+
+                                            $user = "root";
+                                            $hash = password_hash("t00r", PASSWORD_BCRYPT );
+
+                                            $sql="INSERT INTO users (user, hash) VALUES ('{$user}', '{$hash}')";
+                                            $res=$conexion->exec($sql);
+
+
+
+
+
+
+
         ?>
     </body>
 </html>

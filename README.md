@@ -17,7 +17,7 @@ Para ejectuar esta proyecto primeros debes realizar la instalacion  de los sigui
 
 La creacion de preguntas esta protegida con contraseña
 
-Usuario :admin
-Contraseña :admin
+Usuario :root
+Contraseña :t00r
 
 ***Practica creada por Raimon Carbonell***

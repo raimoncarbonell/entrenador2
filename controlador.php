@@ -16,15 +16,24 @@ $c["bd"]=function()
 
 $c["view"]=new \Slim\Views\PhpRenderer("vista/");
 $app->add(new \Slim\Middleware\SafeURLMiddleware());
+$pdo=new PDO("mysql:host=localhost;dbname=bd","root");
+use \Slim\Middleware\HttpBasicAuthentication\PdoAuthenticator;
+
+
 
 $app->add(new \Slim\Middleware\HttpBasicAuthentication([
-  "users" => [
-    "admin" => "admin",
-    "rodolfo" => "contraseñaderodolfo"
+    "path" => "/crearpregunta",
+    
+    "authenticator" => new PdoAuthenticator([
+        "pdo" => $pdo,
+        "secure" => true
 
-  ],
-    "path" => "/crearpregunta"
-]));
+      ])
+    ]));
+
+
+
+
 
 $app->add (new Estadistica());
 
